@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar System</title>
+    <style>
+        body {
+            background: black;
+            background-image: url(img.webp);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .solar-system {
+            position: relative;
+            width: 800px;
+            height: 800px;
+        }
+
+        .sun {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: radial-gradient(#ffd700, #ff8c00);
+            box-shadow: 0 0 50px #ff8c00;
+        }
+
+        .orbit {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px solid rgba(141, 31, 31, 0.648);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .planet {
+            position: absolute;
+            top: -5px;
+            left: 59%;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Mercury */
+        .mercury-orbit {
+            width: 120px;
+            height: 120px;
+            animation: orbit 5s linear infinite;
+        }
+        .mercury {
+            width: 10px;
+            height: 10px;
+            background: #953508;
+        }
+
+        /* Venus - Reverse orbit */
+        .venus-orbit {
+            width: 180px;
+            height: 180px;
+            animation: orbit 8s linear infinite reverse;
+        }
+        .venus {
+            width: 15px;
+            height: 15px;
+            background: #ec9524;
+        }
+
+        /* Earth */
+        .earth-orbit {
+            width: 260px;
+            height: 260px;
+            animation: orbit 12s linear infinite;
+        }
+        .earth {
+            width: 16px;
+            height: 16px;
+            background: #2f61f5;
+        }
+
+        /* Mars */
+        .mars-orbit {
+            width: 340px;
+            height: 340px;
+            animation: orbit 20s linear infinite;
+        }
+        .mars {
+            width: 12px;
+            height: 12px;
+            background: #d65a28;
+        }
+        /* Jupiter */
+        .jupiter-orbit {
+            width: 540px;
+            height: 540px;
+            animation: orbit 60s linear infinite;
+        }
+        .jupiter {
+            width: 30px;
+            height: 30px;
+            background: #d79f1a;
+        }
+        /* saturn */
+        .saturn-orbit {
+            width: 740px;
+            height: 740px;
+            animation: orbit 50s linear infinite;
+        }
+        .saturn {
+            width: 26px;
+            height: 26px;
+            background: #85600a;
+        }
+
+        @keyframes orbit {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .planet:hover {
+            transform: translateX(-50%) scale(1.5);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="solar-system">
+        <div class="sun"></div>
+        
+        <div class="orbit mercury-orbit">
+            <div class="planet mercury"></div>
+        </div>
+        
+        <div class="orbit venus-orbit">
+            <div class="planet venus"></div>
+        </div>
+        
+        <div class="orbit earth-orbit">
+            <div class="planet earth"></div>
+        </div>
+        
+        <div class="orbit mars-orbit">
+            <div class="planet mars"></div>
+        </div>
+        <div class="orbit jupiter-orbit">
+            <div class="planet jupiter"></div>
+        </div>
+        <div class="orbit saturn-orbit">
+            <div class="planet saturn"></div>
+        </div>
+    </div>
+</body>
+</html>
